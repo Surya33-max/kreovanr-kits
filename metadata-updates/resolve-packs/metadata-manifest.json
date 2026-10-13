@@ -1,0 +1,162 @@
+{
+  "schema_version": "1.0",
+  "tool": "Kreovant Resolve Pack Manager (REA-inspired)",
+  "generated_utc": "2026-10-13T09:34:14.352107+00:00",
+  "policy": "Transparent packaging notes only; original creator text and licenses preserved; no authorship claimed.",
+  "validation": {
+    "package_count": 13,
+    "archive_entries": 1514,
+    "setting_files_tagged": 757,
+    "visible_comment_fields_updated": 485,
+    "archives_reopened_successfully": 13,
+    "non_setting_assets_changed": 0,
+    "tested_in_davinci_resolve": false
+  },
+  "packages": [
+    {
+      "filename": "3D.drfx",
+      "source_sha256": "a136e834eb75d546ae9c20a4803f8285a62f066f4eb1b3f4cd8a9de4003a1431",
+      "updated_sha256": "0f726fe667c5e56f35ca3c6985f399caf3e3a21959ca59d587b1dcece05c242b",
+      "source_bytes": 336183,
+      "updated_bytes": 340843,
+      "archive_entries": 49,
+      "settings_tagged": 23,
+      "visible_comment_fields_updated": 1
+    },
+    {
+      "filename": "Airwolf.drfx",
+      "source_sha256": "afa83be7448f3e006d01c719b09141a1bc5a7c9e383da68c01537a81d1768dfa",
+      "updated_sha256": "eb22b9eda37693d7118c08dd2e001d9399435d165faef7c45c3ae5f6588ffa3e",
+      "source_bytes": 51895,
+      "updated_bytes": 53154,
+      "archive_entries": 4,
+      "settings_tagged": 1,
+      "visible_comment_fields_updated": 6
+    },
+    {
+      "filename": "Animated Backgrounds.drfx",
+      "source_sha256": "15ce831bc45b50fabbf4de5dfb22467e6efb81ae6aa335e1c51869e76ceaed16",
+      "updated_sha256": "ec7c431e867d95d3e671e16b442618bcbd7c25094a59b490d86802e21ae198c2",
+      "source_bytes": 131726,
+      "updated_bytes": 132319,
+      "archive_entries": 10,
+      "settings_tagged": 4,
+      "visible_comment_fields_updated": 0
+    },
+    {
+      "filename": "Background Sets.drfx",
+      "source_sha256": "fd404c06fa6cc33ad59141bd6e7be4e3968c91769c070445e454a619720187e5",
+      "updated_sha256": "90a63acce378a13939bb1520581f6733fee7cad72807ca31a99af0834209fe96",
+      "source_bytes": 2304166,
+      "updated_bytes": 2347969,
+      "archive_entries": 379,
+      "settings_tagged": 175,
+      "visible_comment_fields_updated": 190,
+      "original_authors_detected": [
+        "Resolve Assets"
+      ]
+    },
+    {
+      "filename": "Gravity.drfx",
+      "source_sha256": "eaa3b55a155bd72fc34bde54f9edc0010edc1bc113f2e16c8fe63259b85c9207",
+      "updated_sha256": "3ee24ca7c17a255658de6d9abe79afdbe8611185d1d837a501b992b5218ec304",
+      "source_bytes": 1720429,
+      "updated_bytes": 1775220,
+      "archive_entries": 409,
+      "settings_tagged": 201,
+      "visible_comment_fields_updated": 112
+    },
+    {
+      "filename": "LazyBackgrounds.drfx",
+      "source_sha256": "ebb6e4419298e0c0e67b68d8d583628312a896a7caab57d568bfd9db7260517e",
+      "updated_sha256": "2c956a476574b74848654344996c47120bfe16a975e675ee3dfba9d5036eda74",
+      "source_bytes": 876124,
+      "updated_bytes": 886047,
+      "archive_entries": 102,
+      "settings_tagged": 48,
+      "visible_comment_fields_updated": 48,
+      "original_authors_detected": [
+        "Resolve Assets"
+      ]
+    },
+    {
+      "filename": "LazyCollage.drfx",
+      "source_sha256": "de5ce5948004a42d66ea55afcd82695b36294b961bb79a3bf6f3eda63faa8db5",
+      "updated_sha256": "68bb797741d31f06db6ce08ed0fd6a08883f147615d6cb1a97fec31e0d6d2924",
+      "source_bytes": 3386600,
+      "updated_bytes": 3514769,
+      "archive_entries": 134,
+      "settings_tagged": 64,
+      "visible_comment_fields_updated": 64,
+      "original_authors_detected": [
+        "Resolve Assets"
+      ]
+    },
+    {
+      "filename": "Multiscreen.drfx",
+      "source_sha256": "2de23ac3cb54d852e9fcd6fbeb6c31f816f2f4314a7c7a37d563ef41e3e8de85",
+      "updated_sha256": "4f2342ef7a996045b4eb069381e8f2a467bff12e4ee7535d2381e94421e37869",
+      "source_bytes": 1671407,
+      "updated_bytes": 1696544,
+      "archive_entries": 132,
+      "settings_tagged": 62,
+      "visible_comment_fields_updated": 60,
+      "original_authors_detected": [
+        "Resolve Assets"
+      ]
+    },
+    {
+      "filename": "ResolveAssets.drfx",
+      "source_sha256": "45be8d04fa4f912c448fb7ff0727cf537b98b608925c7dba49523c0025fea53d",
+      "updated_sha256": "58701d6c20c2823bb4cb97712d408aba86f5ce4e7000768b174cab39522b3ba1",
+      "source_bytes": 1087115,
+      "updated_bytes": 1098559,
+      "archive_entries": 128,
+      "settings_tagged": 49,
+      "visible_comment_fields_updated": 1
+    },
+    {
+      "filename": "SwiftTransitions.drfx",
+      "source_sha256": "697ae778c3cd9eea37d8ff1bf68fcde2e70b76b1f8241d7f41c00de7292e22d4",
+      "updated_sha256": "cb811293b70966c0b792e69cce6766f1df3520b47b6bcd28ce1303c1da2026cf",
+      "source_bytes": 152773,
+      "updated_bytes": 164644,
+      "archive_entries": 88,
+      "settings_tagged": 71,
+      "visible_comment_fields_updated": 0
+    },
+    {
+      "filename": "Thu4der_WhipRush_1.0.drfx",
+      "source_sha256": "5c2ffe9f96d8fe7689a95a0d9198557d825574a50fcdb4d962d98afb70977137",
+      "updated_sha256": "c2d4a22cd5d712903cb68800d8b8784eee8bfe744d541420d25cea6271c40e73",
+      "source_bytes": 1871,
+      "updated_bytes": 1973,
+      "archive_entries": 1,
+      "settings_tagged": 1,
+      "visible_comment_fields_updated": 0,
+      "original_authors_detected": [
+        "Thu4der | Editable Fusion macro"
+      ]
+    },
+    {
+      "filename": "VBF- Whip LITE V1.drfx",
+      "source_sha256": "29067f61ba2f42b206bec0a32acafc246c46ded1d0f1f910d4c66b575b934fbc",
+      "updated_sha256": "629aa79959eacef658f408c510d85b9effe0906e8c16ce10de2bfcafc2e9098a",
+      "source_bytes": 2520,
+      "updated_bytes": 2592,
+      "archive_entries": 4,
+      "settings_tagged": 1,
+      "visible_comment_fields_updated": 0
+    },
+    {
+      "filename": "YT.drfx",
+      "source_sha256": "a94cb0b1a00e9206196fb7166a5187483a74d0b1f021f3ff8b56d961e3b7b2d5",
+      "updated_sha256": "ee25b0a12b8c22e8ff19ae89a7a3934e333887ad56d772c89236fb483c77292b",
+      "source_bytes": 328092,
+      "updated_bytes": 342219,
+      "archive_entries": 74,
+      "settings_tagged": 57,
+      "visible_comment_fields_updated": 3
+    }
+  ]
+}
