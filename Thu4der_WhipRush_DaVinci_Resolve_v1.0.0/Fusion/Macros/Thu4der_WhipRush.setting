@@ -1,0 +1,245 @@
+-- Thu4der WhipRush v1.0 | Author: Thu4der | Editable Fusion macro
+{
+	Tools = ordered() {
+		Thu4derWhipRush = MacroOperator {
+			Inputs = ordered() {
+				Input1 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "Pan",
+					Page = "Thu4der Controls",
+					Default = 1,
+				},
+				Input2 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "ZoomIn",
+					Page = "Thu4der Controls",
+					Default = 1,
+				},
+				Input3 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "ZoomOut",
+					Page = "Thu4der Controls",
+				},
+				Input4 = InstanceInput {
+					SourceOp = "Transform1",
+					Source = "PanDirection",
+					Page = "Thu4der Controls",
+				}
+			},
+			Outputs = {
+				MainOutput1 = InstanceOutput {
+					SourceOp = "Merge1",
+					Source = "Output",
+				}
+			},
+			ViewInfo = GroupInfo { Pos = { 0, 0 } },
+			Tools = ordered() {
+				Transform1 = Transform {
+					CtrlWZoom = false,
+					Inputs = {
+						Input = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						Pan = Input { Value = 1, },
+						ZoomIn = Input { Value = 1, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 165.348, -31.3507 } },
+					UserControls = ordered() {
+						Pan = {
+							LINKS_Name = "Pan",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "CheckboxControl",
+							INP_Integer = false,
+							INP_SplineType = "Default",
+							CBC_TriState = false,
+							ICS_ControlPage = "Thu4der Controls",
+						},
+						ZoomIn = {
+							LINKS_Name = "Zoom In",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "CheckboxControl",
+							INP_Integer = false,
+							INP_SplineType = "Default",
+							CBC_TriState = false,
+							ICS_ControlPage = "Thu4der Controls",
+						},
+						ZoomOut = {
+							LINKS_Name = "Zoom Out",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "CheckboxControl",
+							INP_Integer = false,
+							INP_SplineType = "Default",
+							CBC_TriState = false,
+							ICS_ControlPage = "Thu4der Controls",
+						},
+						PanDirection = {
+							LINKS_Name = "Pan Direction",
+							LINKID_DataType = "Number",
+							INPID_InputControl = "ScrewControl",
+							INP_Integer = false,
+							INP_MaxScale = 360,
+							INP_SplineType = "Default",
+							ICS_ControlPage = "Thu4der Controls",
+						}
+					}
+				},
+				pan = Transform {
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input { Value = 1, },
+						Quality = Input { Value = 12, },
+						ShutterAngle = Input { Value = 300, },
+						Center = Input {
+							SourceOp = "Vector1",
+							Source = "Position",
+						},
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "zoomout",
+							Source = "Output",
+						},
+						Blend = Input {
+							Value = 0,
+							Expression = "Transform1.Pan",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { 105.548, 42.305 } },
+					UserControls = ordered() { Blend = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "CheckboxControl", INP_MaxScale = 1, INP_Default = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICS_ControlPage = "Common", CBC_TriState = false, INP_SplineType = "Default", LINKS_Name = "Blend" } }
+				},
+				Vector1 = Vector {
+					CtrlWZoom = false,
+					Inputs = {
+						Distance = Input {
+							SourceOp = "Vector1Distance",
+							Source = "Value",
+						},
+						Angle = Input { Expression = "Transform1.PanDirection", },
+						ImageAspect = Input { Value = 1.777778, }
+					},
+				},
+				Vector1Distance = BezierSpline {
+					SplineColor = { Red = 41, Green = 243, Blue = 1 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[17] = { 0, RH = { 25, 0 } },
+						[29] = { -0.62, LH = { 28.8, -0.08 }, RH = { 29.05, -0.67 } },
+						[30] = { 0.62, LH = { 29.96, 0.67 }, RH = { 30.15, 0.08 } },
+						[43] = { 0, LH = { 37, 0 } }
+					}
+				},
+				Merge1 = Merge {
+					Inputs = {
+						Blend = Input { Value = 0, },
+						Background = Input {
+							SourceOp = "zoomin",
+							Source = "Output",
+						},
+						Foreground = Input {
+							SourceOp = "Transform1",
+							Source = "Output",
+						},
+						PerformDepthMerge = Input { Value = 0, }
+					},
+					ViewInfo = OperatorInfo { Pos = { 361.749, 48.5736 } },
+				},
+				zoomin = Transform {
+					NameSet = true,
+					Inputs = {
+						MotionBlur = Input { Value = 1, },
+						Quality = Input { Value = 12, },
+						ShutterAngle = Input { Value = 300, },
+						Size = Input {
+							SourceOp = "zoominSize",
+							Source = "Value",
+						},
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "pan",
+							Source = "Output",
+						},
+						Blend = Input { Expression = "Transform1.ZoomIn", }
+					},
+					ViewInfo = OperatorInfo { Pos = { 251.749, 48.5736 } },
+					UserControls = ordered() { Blend = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "CheckboxControl", INP_MaxScale = 1, INP_Default = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICS_ControlPage = "Common", CBC_TriState = false, INP_SplineType = "Default", LINKS_Name = "Blend" } }
+				},
+				zoominSize = BezierSpline {
+					SplineColor = { Red = 225, Green = 0, Blue = 225 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[17] = { 1, RH = { 25, 1 } },
+						[29] = { 1.62, LH = { 28.8, 1.02 }, RH = { 29.05, 1.7 } },
+						[30] = { 0.58, LH = { 29.96, 0.5 }, RH = { 30.15, 0.96 } },
+						[43] = { 1, LH = { 37, 1 } }
+					}
+				},
+				zoomout = Transform {
+					NameSet = true,
+					Inputs = {
+						Size = Input {
+							SourceOp = "zoomoutSize",
+							Source = "Value",
+						},
+						Edges = Input { Value = 3, },
+						Input = Input {
+							SourceOp = "MediaIn1",
+							Source = "Output",
+						},
+						Blend = Input {
+							Value = 0,
+							Expression = "Transform1.ZoomOut",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -55.3056, 44.6557 } },
+					UserControls = ordered() { Blend = { INP_MaxAllowed = 1000000, INP_Integer = false, INPID_InputControl = "CheckboxControl", INP_MaxScale = 1, INP_Default = 1, INP_MinScale = 0, INP_MinAllowed = -1000000, LINKID_DataType = "Number", ICS_ControlPage = "Common", CBC_TriState = false, INP_SplineType = "Default", LINKS_Name = "Blend" } }
+				},
+				zoomoutSize = BezierSpline {
+					SplineColor = { Red = 225, Green = 0, Blue = 225 },
+					CtrlWZoom = false,
+					KeyFrames = {
+						[17] = { 1, RH = { 25, 1 } },
+						[29] = { 0.58, LH = { 28.8, 0.98 }, RH = { 29.05, 0.5 } },
+						[30] = { 1.62, LH = { 29.96, 1.7 }, RH = { 30.15, 1.04 } },
+						[43] = { 1, LH = { 37, 1 } }
+					}
+				},
+				MediaIn1 = MediaIn {
+					ExtentSet = true,
+					CustomData = { MediaProps = { MEDIA_HAS_AUDIO = true, MEDIA_AUDIO_TRACKS_NUM = 1, MEDIA_NAME = "Thu4der WhipRush", MEDIA_START_FRAME = 9, MEDIA_AUDIO_TRACKS_DESC = { { MEDIA_AUDIO_BIT_DEPTH = 32, MEDIA_AUDIO_TRACK_ID = "Timeline Audio", MEDIA_AUDIO_TRACK_NAME = "Timeline Audio [Timeline 1]", MEDIA_AUDIO_NUM_CHANNELS = 2, MEDIA_AUDIO_START_TIME = 9, MEDIA_AUDIO_SAMPLE_RATE = 48000, MEDIA_AUDIO_FRAME_RATE = 24 } }, MEDIA_IS_SOURCE_RES = false, MEDIA_SRC_FRAME_RATE = 24, MEDIA_MARK_OUT = 51, MEDIA_WIDTH = 1920, MEDIA_NUM_FRAMES = 43, MEDIA_MARK_IN = 9, MEDIA_HEIGHT = 1080 }, },
+					Inputs = {
+						GlobalIn = Input { Value = 9, },
+						GlobalOut = Input { Value = 51, },
+						MediaSource = Input { Value = FuID { "Background" }, },
+						MediaID = Input { Value = "BACKGROUND", },
+						AudioTrack = Input { Value = FuID { "Timeline Audio" }, },
+						Layer = Input { Value = "0", },
+						ClipTimeStart = Input { Value = 9, },
+						ClipTimeEnd = Input { Value = 51, },
+						["Gamut.SLogVersion"] = Input { Value = FuID { "SLog2" }, },
+						DeepOutputMode = Input {
+							Value = 0,
+							Disabled = true,
+						},
+						LeftAudio = Input {
+							SourceOp = "Left",
+							Source = "Data",
+						},
+						RightAudio = Input {
+							SourceOp = "Right",
+							Source = "Data",
+						}
+					},
+					ViewInfo = OperatorInfo { Pos = { -185.457, 49.357 } },
+					Version = 1
+				},
+				Left = AudioDisplay {
+					CtrlWZoom = false,
+				},
+				Right = AudioDisplay {
+					CtrlWZoom = false,
+				}
+			},
+		}
+	},
+	ActiveTool = "Thu4derWhipRush"
+}
